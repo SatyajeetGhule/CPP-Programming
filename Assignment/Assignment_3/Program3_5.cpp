@@ -1,0 +1,62 @@
+////////////////////////////////////////////////////////////////////////////
+//
+//  Request Header File 
+//
+////////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+using namespace std;
+
+////////////////////////////////////////////////////////////////////////////
+//
+//  Class Name    :    Demo
+//  Function Name :    Mult
+//  Description   :    Accept number from user and return its product of digits.
+//  Input         :    Integer
+//  Output        :    Integer
+//  Author        :    Satyajeet Manohar Ghule
+//  Date          :    11/12/2025
+//
+////////////////////////////////////////////////////////////////////////////
+
+class Demo
+{
+    public :
+    int Mult(int iNo)
+    {
+        int iDigit = 0;
+        if(iNo == 0)
+
+        return 1;
+
+        iDigit = iNo % 10;
+        
+        return iDigit *  Mult(iNo / 10);
+    }
+};
+
+////////////////////////////////////////////////////////////////////////////
+//
+//  Entry point Function for the Application
+//
+////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    Demo dobj;
+    int iValue = 0;
+    int iRet = 0;
+    printf("Enter a number :\n");
+    scanf("%d",&iValue);
+    iRet = dobj.Mult(iValue);
+    printf("Factorial value is : %d\n",iRet);
+    return 0;
+}
+
+////////////////////////////////////////////////////////////////////////////
+//
+//  Test Cases Successfully Handeld by This Application
+//
+//  Input   :   523   Output  :   30
+//
+////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,62 @@
+////////////////////////////////////////////////////////////////////////////
+//
+//  Request Header File 
+//
+////////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+using namespace std;
+
+////////////////////////////////////////////////////////////////////////////
+//
+//  Class Name    :    Demo
+//  Function Name :    Strlen
+//  Description   :    Accept string from user and count number of characters.
+//  Input         :    String
+//  Output        :    Integer
+//  Author        :    Satyajeet Manohar Ghule
+//  Date          :    11/12/2025
+//
+////////////////////////////////////////////////////////////////////////////
+
+class Demo
+{
+    public :
+    int Strlen(char *str)
+    {
+        int iCount = 0;
+        if(*str == '\0')
+        {
+            return 0;
+        }
+        iCount++;
+        
+        return iCount + Strlen(str + 1);
+    }
+};
+
+////////////////////////////////////////////////////////////////////////////
+//
+//  Entry point Function for the Application
+//
+////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    Demo dobj;
+    char arr[20];
+    int iRet = 0;
+    printf("Enter a string :\n");
+    scanf("%s",arr);
+    iRet = dobj.Strlen(arr);
+    printf("Summation of Digit is : %d\n",iRet);
+    return 0;
+}
+
+////////////////////////////////////////////////////////////////////////////
+//
+//  Test Cases Successfully Handeld by This Application
+//
+//  Input   :   satyajeet    Output  :   09
+//
+////////////////////////////////////////////////////////////////////////////
