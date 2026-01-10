@@ -5,33 +5,33 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
+#include <stdbool.h>
 using namespace std;
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  Function Name : SecondMin
-//  Description   : Write Generic program to find Second smallest element.
+//  Function Name : Search
+//  Description   : Write Generic program to Search a value in an array.
 //  Input         : Generic
 //  Output        : Generic
 //  Author        : Satyajeet Manohar Ghule
-//  Date          : 08/01/2026
+//  Date          : 09/01/2026
 //
 ////////////////////////////////////////////////////////////////////////////////
 
 template <class T>
-T SecondMin(T *Arr, int iSize)
+bool Search(T *Arr, int iSize, T Value)
 {
-    T imin = Arr[0];
+    int i = 0;
 
-    for (int i = 1; i < iSize; i++)
+    for (i = 0; i < iSize; i++)
     {
-        if (Arr[i] < imin)
+        if (Arr[i] == Value)
         {
-            imin = Arr[i];
+            return true;
         }
     }
-
-    return imin;
+    return false;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -45,8 +45,11 @@ int main()
     int arr[] = {10, 20, 5, 40, 50};
     float brr[] = {10.5f, 3.2f, 9.8f, 7.1f};
 
-    cout << SecondMin(arr, 5) << "\n";
-    cout << SecondMin(brr, 4) << "\n";
+    bool bRet1 = Search(arr, 5, 40);
+    cout << (bRet1 ? "Found\n" : "Not Found\n");
+
+    bool bRet2 = Search(brr, 4, 7.1f);
+    cout << (bRet2 ? "Found\n" : "Not Found\n");
 
     return 0;
 }
@@ -56,6 +59,6 @@ int main()
 //  Testcases succesfully handle by the application
 //
 //  Input        : 10  20   5   40   50
-//  Ouptput      : 5
+//  Ouptput      : Found
 //
 ////////////////////////////////////////////////////////////////////////////////
