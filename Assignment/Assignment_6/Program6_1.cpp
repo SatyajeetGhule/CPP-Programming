@@ -13,7 +13,7 @@ using namespace std;
 //  Description   : Write Generic program to Copy one Array into another.
 //  Input         : Generic
 //  Output        : Generic
-//  Author        : Rahul Balasaheb Ugale
+//  Author        : Satyajeet Manohar Ghule
 //  Date          : 08/01/2026
 //
 ////////////////////////////////////////////////////////////////////////////////
