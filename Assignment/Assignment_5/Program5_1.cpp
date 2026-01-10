@@ -1,4 +1,3 @@
-
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  Required header file
@@ -10,8 +9,8 @@ using namespace std;
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  Function Name : AddN
-//  Description   : Write Generic program to accept N value and return Addtion.
+//  Function Name : Multiply
+//  Description   : Write Generic program to multiply two numbers.
 //  Input         : Generic
 //  Output        : Generic
 //  Author        : Satyajeet Manohar Ghule
@@ -20,17 +19,11 @@ using namespace std;
 ////////////////////////////////////////////////////////////////////////////////
 
 template <class T>
-T AddN(T *Arr, int Size)
+T Multiply(T No1, T No2)
 {
-    T Sum = 0;
-    int iCnt = 0;
-
-    for (iCnt = 0; iCnt < Size; iCnt++)
-    {
-        Sum = Sum + Arr[iCnt];
-    }
-
-    return Sum;
+    T ans;
+    ans = No1 * No2;
+    return ans;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -41,14 +34,11 @@ T AddN(T *Arr, int Size)
 
 int main()
 {
-    int arr[] = {10, 20, 30, 40, 50};
-    float brr[] = {10.0f, 20.0f, 30.0f, 40.0f};
+    int iRet = Multiply(10, 20);
+    cout << iRet << "\n";
 
-    int iSum = AddN(arr, 5);
-    cout << iSum << "\n";
-
-    float fSum = AddN(brr, 4);
-    cout << fSum << "\n";
+    float fRet = Multiply(10.0f, 20.0f);
+    cout << fRet << "\n";
 
     return 0;
 }
@@ -57,7 +47,7 @@ int main()
 //
 //  Testcases succesfully handle by the application
 //
-//  Input        : 10  20  30  40  50
-//  Ouptput      : 150
+//  Input        : 10  20
+//  Ouptput      : 200
 //
 ////////////////////////////////////////////////////////////////////////////////
