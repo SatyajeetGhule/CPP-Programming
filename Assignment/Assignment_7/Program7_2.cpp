@@ -1,0 +1,64 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Required header file
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#include <iostream>
+#include <stdbool.h>
+using namespace std;
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : Search
+//  Description   : Write Generic program to Search a value in an array.
+//  Input         : Generic
+//  Output        : Generic
+//  Author        : Satyajeet Manohar Ghule
+//  Date          : 09/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
+
+template <class T>
+bool Search(T *Arr, int iSize, T Value)
+{
+    int i = 0;
+
+    for (i = 0; i < iSize; i++)
+    {
+        if (Arr[i] == Value)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Entry point function for the application
+//
+////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    int arr[] = {10, 20, 5, 40, 50};
+    float brr[] = {10.5f, 3.2f, 9.8f, 7.1f};
+
+    bool bRet1 = Search(arr, 5, 40);
+    cout << (bRet1 ? "Found\n" : "Not Found\n");
+
+    bool bRet2 = Search(brr, 4, 7.1f);
+    cout << (bRet2 ? "Found\n" : "Not Found\n");
+
+    return 0;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Testcases succesfully handle by the application
+//
+//  Input        : 10  20   5   40   50
+//  Ouptput      : Found
+//
+////////////////////////////////////////////////////////////////////////////////
