@@ -5,13 +5,12 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
-#include <stdbool.h>
 using namespace std;
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  Function Name : Search
-//  Description   : Write Generic program to Search a value in an array.
+//  Function Name : SumEven
+//  Description   : Write Generic program to find sum of all even elements.
 //  Input         : Generic
 //  Output        : Generic
 //  Author        : Satyajeet Manohar Ghule
@@ -20,18 +19,20 @@ using namespace std;
 ////////////////////////////////////////////////////////////////////////////////
 
 template <class T>
-bool Search(T *Arr, int iSize, T Value)
+T SumEven(T *Arr, int iSize)
 {
+    T Sum = 0;
     int i = 0;
 
     for (i = 0; i < iSize; i++)
     {
-        if (Arr[i] == Value)
+        if (Arr[i] % 2 == 0)
         {
-            return true;
+            Sum = Sum + Arr[i];
         }
     }
-    return false;
+
+    return Sum;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -43,13 +44,9 @@ bool Search(T *Arr, int iSize, T Value)
 int main()
 {
     int arr[] = {10, 20, 5, 40, 50};
-    float brr[] = {10.5f, 3.2f, 9.8f, 7.1f};
 
-    bool bRet1 = Search(arr, 5, 40);
-    cout << (bRet1 ? "Found\n" : "Not Found\n");
-
-    bool bRet2 = Search(brr, 4, 7.1f);
-    cout << (bRet2 ? "Found\n" : "Not Found\n");
+    int iRet = SumEven(arr, 5);
+    cout << iRet << "\n";
 
     return 0;
 }
@@ -59,6 +56,6 @@ int main()
 //  Testcases succesfully handle by the application
 //
 //  Input        : 10  20   5   40   50
-//  Ouptput      : Found
+//  Ouptput      : 120
 //
 ////////////////////////////////////////////////////////////////////////////////
